@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<div class="p-y-lg p-x b-head">
+<div class="b-head">
   <nav class="navbar m-b-0">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -19,23 +19,18 @@ layout: base
       <div class="navbar-collapse collapse" id="navbar-collapse-com">
         <ul class="nav navbar-nav navbar-right">
           <li><a class="js-scr" href="#who">Кто тренер</a></li>
-          <li><a class="js-scr" href="#join">Записаться</a></li>
+          <li><a class="js-scr" href="#join-anchor">Записаться</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container m-y-lg p-x-lg">
+  <div class="container p-x-lg p-y-lg">
     <h4><b>с 12 ноября по 10 декабря, онлайн</b></h4>
 
     <h1>Бизнес <small><span class="icon icon-heart text-muted"></span></small> по&nbsp;любви</h1>
 
     <h2>Авторский онлайн-курс Николая Воробьёва, на&nbsp;котором ты&nbsp;выберешь вдохновляющее дело и&nbsp;сделаешь из&nbsp;него прибыльный бизнес</h2>
-  </div>
-</div>
-
-<div class="block block-bordered">
-  <div class="container p-x-lg">
 
     <h1>Начало занятий 12&nbsp;ноября 2016 в 20:00 мск</h1>
 
@@ -49,7 +44,7 @@ layout: base
       <li>Доступ к сообществу участников</li>
     </ul>
 
-    <p class="m-t-md"><a href="#join" class="btn btn-primary btn-lg js-scr">Попасть на открытый урок бесплатно</a></p>
+    <p class="m-t-md"><a href="#join-anchor" class="btn btn-primary btn-lg js-scr">Попасть на открытый урок бесплатно</a></p>
   </div>
 </div>
 
@@ -86,34 +81,50 @@ layout: base
     <p class="lead"><b>Плохая новость</b> заключается в том, что если ничего не делать — станет только хуже. В тебе копится неудовлетворенность своей работой, а время уходит.</p>
 
     <p class="lead"><b>Хорошая новость</b> заключается в том, что люди, у которых не было до этого никакого опыта в бизнесе, тоже открывают бизнесы.</p>
-    <p class="m-y-lg"><a href="#join" class="btn btn-primary btn-lg js-scr">Выбрать любимое дело и открыть бизнес</a></p>
+    <p class="m-y-lg"><a href="#join-anchor" class="btn btn-primary btn-lg js-scr">Выбрать любимое дело и открыть бизнес</a></p>
   </div>
 </div>
 
 <script type="text/javascript">
 $(function() {
-  setInterval(function(){
-    var age = parseInt($('#age-timer__number').text());
-    age = age + 1;
-    if (age == 59) age = 25;
-
-    switch (age % 10) {
-      case 1:
-        text = 'год';
-        break;
-      case 2:
-      case 3:
-      case 4:
-        text = 'года';
-        break;
-      default: 
-        text = 'лет';
+  var oTop = $('#age-timer').offset().top - window.innerHeight;
+  $(window).scroll(function(){
+    var pTop = $('body').scrollTop();
+    console.log( pTop + ' - ' + oTop );   //just for your debugging
+    if( pTop > oTop ){
+      start_count();
     }
+  });
+});
 
-    $('#age-timer__number').text(age);
-    $('#age-timer__text').text(text);
-  }, 1000);
-})
+var count_started = false;
+
+function start_count(){
+  if (!count_started) {
+    count_started = true;
+    setInterval(function(){
+      var age = parseInt($('#age-timer__number').text());
+      age = age + 1;
+      if (age == 59) age = 25;
+
+      switch (age % 10) {
+        case 1:
+          text = 'год';
+          break;
+        case 2:
+        case 3:
+        case 4:
+          text = 'года';
+          break;
+        default: 
+          text = 'лет';
+      }
+
+      $('#age-timer__number').text(age);
+      $('#age-timer__text').text(text);
+    }, 1000);
+  }
+}
 </script>
 
 <div class="block block-bordered block-inverse">
@@ -131,9 +142,9 @@ $(function() {
     <p class="lead m-b-lg">Каждую неделю ты будешь работать над одной из&nbsp;сфер, которая позволит обрести силы, видение и&nbsp;четкий план действий по старту любимого бизнеса.</p>
 
     <div class="row">
-      <div class="col-sm-6 m-b-lg">
+      <div class="col-md-3 m-b-lg">
         <h2 class="text-muted">Неделя 1</h2>
-        <h1>Понимание себя</h1>
+        <h3>Понимание себя</h3>
 
         <div class="week">
           <p>1. Карта желаний</p>
@@ -142,14 +153,12 @@ $(function() {
           <p>4. Карта смысла</p>
           <p>5. Скрытые желания и скрытые смыслы</p>
         </div>
-
-        <p class="lead"><b>Результат:</b> глубокое понимание себя</p>
       </div>
 
-      <div class="col-sm-6 m-b-lg">
+      <div class="col-md-3 m-b-lg">
 
         <h2 class="text-muted">Неделя 2</h2>
-        <h1>100 интересных целей</h1>
+        <h3>100 интересных целей</h3>
 
         <div class="week">
           <p>6. Ценности и важность</p>
@@ -157,15 +166,12 @@ $(function() {
           <p>8. Черновые цели</p>
           <p>9. Альтернативные способы реализации</p>
         </div>
-
-        <p class="lead"><b>Результат:</b> 100 интересных целей</p>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 m-b-lg">
+
+      <div class="col-md-3 m-b-lg">
 
         <h2 class="text-muted">Неделя 3</h2>
-        <h1>Вдохновляющая цель</h1>
+        <h3>Вдохновляющая цель</h3>
 
         <div class="week">
           <p>10. Критика и подводные камни</p>
@@ -174,14 +180,12 @@ $(function() {
           <p>13. Подъём ставок и подогрев интереса</p>
           <p>14. Визуализация цели</p>
         </div>
-
-        <p class="lead"><b>Результат:</b> чёткая, конкретная, вдохновляющая цель, и отсутствие сомнений в её достижимости</p>
       </div>
 
-      <div class="col-sm-6 m-b-lg">
+      <div class="col-md-3 m-b-lg">
 
         <h2 class="text-muted">Неделя 4</h2>
-        <h1>Первый заказ</h1>
+        <h3>Первый заказ</h3>
 
         <div class="week">
           <p>15. Анализ рынка</p>
@@ -190,15 +194,9 @@ $(function() {
           <p>18. Первичная монетизация</p>
           <p>19. План развития бизнеса</p>
         </div>
-
-        <p class="lead"><b>Результат:</b> чёткое понимание целевой аудитории, первый оплаченный заказ, и&nbsp;план масштабирования</p>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="block block-bordered">
-  <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center m-b-md">В результате ты</h1>
@@ -213,7 +211,7 @@ $(function() {
           <li>создашь конкретный план действий</li>
         </ul>
 
-        <p class="text-center m-t-lg"><a href="#join" class="js-scr btn btn-primary btn-lg">Попасть на бесплатный открытый урок</a></p>
+        <p class="text-center m-t-lg"><a href="#join-anchor" class="js-scr btn btn-primary btn-lg">Попасть на бесплатный открытый урок</a></p>
       </div>
     </div>
   </div>
@@ -222,7 +220,7 @@ $(function() {
 <div class="block block-bordered">
   <div class="container">
     <h1 class="text-center">Первый урок — бесплатно</h1>
-    <p class="text-center"><a href="#" id="pricing__show">А дальше?</a></p>
+    <p class="lead text-center"><a href="#" id="pricing__show">А что дальше? Давай поговорим о ценах</a></p>
     <div class="row pricing">
       <div class="col-md-6">
         <h2>Решай сейчас — плати потом</h2>
@@ -243,7 +241,7 @@ $(function() {
           </tr>
         </table>
 
-        <h3 class="text-center">Или</h3>
+        <h3>Или</h3>
 
         <p>Получи специальную цену за верность своим решениям и оплату всего курса наперед</p>
         <table class="table table-bordered pricing__table">
@@ -256,10 +254,10 @@ $(function() {
         </table>
 
         <p>Не знаешь что выбрать?</p>
-        <p>Тогда отложи решение до открытого занятия.</p>
+        <h3>Отложи решение до открытого занятия</h3>
 
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5 col-md-offset-1">
         <h2>Что входит в курс?</h2>
         <p>
           Доступ к 19 видео-урокам;
@@ -293,7 +291,7 @@ $(function(){
 <div class="block block-bordered" id="join">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-8 col-md-offset-2" id="join-anchor">
         <h1>Записывайся</h1>
 
         <p>Заполни форму ниже, чтобы получить доступ к открытому уроку 12 ноября</p>
@@ -381,15 +379,6 @@ $(function(){
   </div>
 </div>
 
-<div class="block block-bordered block-inverse b-love">
-  <div class="container">
-    <h1 class="m-b-lg">Ты снова полюбишь жизнь</h1>
-    <h3><span class="icon icon-light-up"></span> Станешь вдохновлённым</h3>
-    <h3><span class="icon icon-medal"></span> Реализуешь свой потенциал</h3>
-    <h3><span class="icon icon-battery"></span> Твоя работа будет твоим<br/>любимым занятием</h3>
-  </div>
-</div>
-
 <div class="block block-bordered">
   <div class="container">
     <h1 class="m-b-lg">В результате ты станешь свободным</h1>
@@ -406,7 +395,7 @@ $(function(){
 
     <p>Если тебе не хочется, чтобы тебя «отпускали в отпуск», а хочешь сам управлять своей жизнью. Если тебе хочется путешествовать, смотреть, знакомиться, получать новые впечатления. Значит тебе пора открывать свой бизнес.</p>
 
-    <p class="m-t-lg"><a href="#join" class="js-scr btn btn-primary btn-lg">Стать свободным</a></p>
+    <p class="m-t-lg"><a href="#join-anchor" class="js-scr btn btn-primary btn-lg">Стать свободным</a></p>
   </div>
 </div>
 
@@ -414,7 +403,7 @@ $(function(){
   <div class="container">
     <h1 class="m-b-lg">Не просто выберешь, но&nbsp;и&nbsp;запустишь бизнес</h1>
     <p class="lead">Действуй.</p>
-    <p class="m-t-lg"><a href="#join" class="js-scr btn btn-default">Оставить заявку на участие</a></p>
+    <p class="m-t-lg"><a href="#join-anchor" class="js-scr btn btn-default">Оставить заявку на участие</a></p>
   </div>
 </div>
 
