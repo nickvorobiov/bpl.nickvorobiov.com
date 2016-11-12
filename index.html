@@ -90,7 +90,6 @@ $(function() {
   var oTop = $('#age-timer').offset().top - window.innerHeight;
   $(window).scroll(function(){
     var pTop = $('body').scrollTop();
-    console.log( pTop + ' - ' + oTop );   //just for your debugging
     if( pTop > oTop ){
       start_count();
     }
@@ -102,10 +101,11 @@ var count_started = false;
 function start_count(){
   if (!count_started) {
     count_started = true;
+    var maxage = 60;
     setInterval(function(){
       var age = parseInt($('#age-timer__number').text());
       age = age + 1;
-      if (age == 59) age = 25;
+      if (age >= maxage) age = 25;
 
       switch (age % 10) {
         case 1:
@@ -120,6 +120,14 @@ function start_count(){
           text = 'лет';
       }
 
+      color = '#000';
+      var rest = (maxage - age);
+      if (rest < 16) {
+        var c = (15 - rest).toString(16);
+        color = '#'+c+c+c;
+      }
+
+      $('#age-timer').css({'color': color});
       $('#age-timer__number').text(age);
       $('#age-timer__text').text(text);
     }, 1000);
