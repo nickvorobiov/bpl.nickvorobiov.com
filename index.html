@@ -26,15 +26,30 @@ layout: base
   </nav>
 
   <div class="container m-y-lg p-x-lg">
-    <h4 class="text-muted">12 ноября 2016, онлайн</h4>
+    <h4><b>с 12 ноября по 10 декабря, онлайн</b></h4>
 
-    <h1>Бизнес <small><span class="icon icon-heart text-muted"></span></small> по любви</h1>
+    <h1>Бизнес <small><span class="icon icon-heart text-muted"></span></small> по&nbsp;любви</h1>
 
-    <h2>Авторский онлайн-курс Николая Воробьёва, на котором ты выберешь вдохновляющее дело и сделаешь из него прибыльный бизнес</h2>
+    <h2>Авторский онлайн-курс Николая Воробьёва, на&nbsp;котором ты&nbsp;выберешь вдохновляющее дело и&nbsp;сделаешь из&nbsp;него прибыльный бизнес</h2>
+  </div>
+</div>
 
-    <h3>Занимайся тем, что любишь и что тебя радует, и зарабатывай на этом</h3>
+<div class="block block-bordered">
+  <div class="container p-x-lg">
 
-    <p class="m-y-lg"><a href="#join" class="btn btn-primary btn-lg js-scr">Записаться на <b>бесплатный</b> первый урок</a></p>
+    <h1>Начало занятий 12&nbsp;ноября 2016 в 20:00 мск</h1>
+
+    <p class="lead m-b-md">Занимайся тем, что любишь и что тебя радует, <b>и&nbsp;зарабатывай на&nbsp;этом</b></p>
+
+    <ul>
+      <li>1 вводный и 19 видео-уроков, разбитые по темам</li>
+      <li>19 заданий на выбор любимого дела и запуск бизнеса</li>
+      <li>5 живых практических занятий</li>
+      <li>База знаний с полезными материалами</li>
+      <li>Доступ к сообществу участников</li>
+    </ul>
+
+    <p class="m-t-md"><a href="#join" class="btn btn-primary btn-lg js-scr">Попасть на открытый урок бесплатно</a></p>
   </div>
 </div>
 
@@ -64,6 +79,9 @@ layout: base
 
 <div class="block block-bordered b-odd">
   <div class="container p-x-lg">
+    <h1 class="text-center">Пока ты собираешься с силами начать жить полной жизнью, время идёт</h1>
+
+    <p class="text-center m-b-lg" id="age-timer"><span id="age-timer__number">25</span> <span id="age-timer__text">лет</span></p>
 
     <p class="lead"><b>Плохая новость</b> заключается в том, что если ничего не делать — станет только хуже. В тебе копится неудовлетворенность своей работой, а время уходит.</p>
 
@@ -72,53 +90,46 @@ layout: base
   </div>
 </div>
 
-<div class="block block-bordered b-enjoy">
-  <div class="container">
-    <h1 class="text-center">Занимайся тем, что вдохновляет и радует</h1>
-    <p class="lead text-center m-b-lg">Для кого создан курс</p>
-    <div class="row">
-      <div class="col-md-3">
-        <span class="icon icon-emoji-happy" style="color: #aa0;"></span>
-        <p>Уже созрел для&nbsp;открытия бизнеса</p>
-      </div>
-      <div class="col-md-3">
-        <span class="icon icon-address" style="color: #00a;"></span>
-        <p>Не&nbsp;хочешь заниматься «лишь&nbsp;бы&nbsp;чем»</p>
-      </div>
-      <div class="col-md-3">
-        <span class="icon icon-heart" style="color: #a00;"></span>
-        <p>Тебе важно выбрать дело, которое ты&nbsp;будешь любить</p>
-      </div>
-      <div class="col-md-3">
-        <span class="icon icon-flower" style="color: #090;"></span>
-        <p>Хочешь зарабатывать на&nbsp;своём любимом деле</p>
-      </div>
-    </div>
-  </div>
-</div>
+<script type="text/javascript">
+$(function() {
+  setInterval(function(){
+    var age = parseInt($('#age-timer__number').text());
+    age = age + 1;
+    if (age == 59) age = 25;
 
-<div class="block block-bordered b-odd">
-  <div class="container p-x-lg">
+    switch (age % 10) {
+      case 1:
+        text = 'год';
+        break;
+      case 2:
+      case 3:
+      case 4:
+        text = 'года';
+        break;
+      default: 
+        text = 'лет';
+    }
 
-    <h1>Курс стартует 12&nbsp;ноября 2016 и&nbsp;длится 4&nbsp;недели</h1>
+    $('#age-timer__number').text(age);
+    $('#age-timer__text').text(text);
+  }, 1000);
+})
+</script>
 
-    <p class="lead m-t-md">Первый урок — <b>бесплатно</b></p>
-
-    <p class="m-y-lg"><a href="#join" class="btn btn-primary btn-lg js-scr">Участвовать в первом уроке бесплатно</a></p>
-
-    <p class="lead m-t-md">В программу входят</p>
-    <ul>
-      <li>5 практических занятий по разбору твоих целей</li>
-      <li>1 вводный и 19 видео-уроков, разбитые по темам</li>
-      <li>19 заданий на выбор любимого дела и запуск бизнеса</li>
-      <li>База знаний с полезными материалами</li>
-      <li>Доступ к сообществу участников</li>
-    </ul>
+<div class="block block-bordered block-inverse">
+  <div class="container text-center">
+    <h1>Хватит терпеть</h1>
+    <p class="lead">Дай себе хотя бы шанс начать делать то, что любишь, и получать за это высокую прибыль</p>
+    <p>Вернуться к нелюбимой работе ты всегда успеешь</p>
   </div>
 </div>
 
 <div class="block block-bordered">
   <div class="container">
+    <h1>«Бизнес по любви» — это системная работа над собой и&nbsp;своим будущим бизнесом в&nbsp;течение 1&nbsp;месяца</h1>
+
+    <p class="lead m-b-lg">Каждую неделю ты будешь работать над одной из&nbsp;сфер, которая позволит обрести силы, видение и&nbsp;четкий план действий по старту любимого бизнеса.</p>
+
     <div class="row">
       <div class="col-sm-6 m-b-lg">
         <h2 class="text-muted">Неделя 1</h2>
@@ -177,37 +188,107 @@ layout: base
           <p>16. Портрет целевой аудитории</p>
           <p>17. Прокачка экспертности</p>
           <p>18. Первичная монетизация</p>
+          <p>19. План развития бизнеса</p>
         </div>
 
-        <p class="lead"><b>Результат:</b> чёткое понимание целевой аудитории, первый оплаченный заказ</p>
+        <p class="lead"><b>Результат:</b> чёткое понимание целевой аудитории, первый оплаченный заказ, и&nbsp;план масштабирования</p>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="block block-bordered">
-  <div class="container">
-    <p class="text-center"><a href="#join" class="js-scr btn btn-primary btn-lg">Хочу зарабатывать на своём любимом деле</a></p>
   </div>
 </div>
 
 <div class="block block-bordered">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center m-b-md">В результате ты</h1>
 
-        <h2 class="text-muted">Заключительное занятие</h2>
-        <h1>Постоянный источник дохода</h1>
+        <ul>
+          <li>получишь четкое понимание себя </li>
+          <li>осознаешь свои желания и возможности</li>
+          <li>детально проработаешь личностные цели и способы их реализации</li>
+          <li>найдешь вдохновение и прилив сил</li>
+          <li>отработаешь сомнения и сдерживающие тебя установки</li>
+          <li>получишь только необходимые на практике знания для старта бизнеса</li>
+          <li>создашь конкретный план действий</li>
+        </ul>
 
-        <div class="p-x-lg p-y-lg">
-          <p>19. Масштабирование бизнеса</p>
-        </div>
-
-        <p class="lead"><b>Результат:</b> план масштабирования, позволяющий первый заказ превратить в постоянный источник дохода</p>
+        <p class="text-center m-t-lg"><a href="#join" class="js-scr btn btn-primary btn-lg">Попасть на бесплатный открытый урок</a></p>
       </div>
     </div>
   </div>
 </div>
+
+<div class="block block-bordered">
+  <div class="container">
+    <h1 class="text-center">Первый урок — бесплатно</h1>
+    <p class="text-center"><a href="#" id="pricing__show">А дальше?</a></p>
+    <div class="row pricing">
+      <div class="col-md-6">
+        <h2>Решай сейчас — плати потом</h2>
+        <p>Я предлагаю, тебе честную оплату. Если хочешь, плати за каждую неделю отдельно. Что-то не понравится — всегда есть шанс пойти своей дорогой.</p>
+
+        <table class="table table-bordered pricing__table">
+          <tr>
+            <td>Неделя 1</td>
+            <td>Неделя 2</td>
+            <td>Неделя 3</td>
+            <td>Неделя 4</td>
+          </tr>
+          <tr>
+            <td>8000р</td>
+            <td>8000р</td>
+            <td>8000р</td>
+            <td>8000р</td>
+          </tr>
+        </table>
+
+        <h3 class="text-center">Или</h3>
+
+        <p>Получи специальную цену за верность своим решениям и оплату всего курса наперед</p>
+        <table class="table table-bordered pricing__table">
+          <tr>
+            <td>
+              25 000р за всё
+              <br/><span class="text-muted">экономия 7000р</span>
+            </td>
+          </tr>
+        </table>
+
+        <p>Не знаешь что выбрать?</p>
+        <p>Тогда отложи решение до открытого занятия.</p>
+
+      </div>
+      <div class="col-md-6">
+        <h2>Что входит в курс?</h2>
+        <p>
+          Доступ к 19 видео-урокам;
+          <br/>Доступ к 5 живым онлайн-урокам;
+          <br/>Доступ к 100% заданий;
+          <br/>Доступ ко всей базе знаний с материалами;
+          <br/>Доступ к сообществу участников;
+        </p>
+
+        <p><b>Бонусы!</b></p>
+
+        <p>
+          Запись 50 уроков по прокачке личных качеств, которые необходимы предпринимателю;
+          <br/>Бесплатный доступ на полгода в закрытый клуб личностного роста.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+  $('#pricing__show').click(function(e){
+    $('#pricing__show').hide();
+    $('.pricing').slideDown();
+    e.preventDefault();
+  })
+})
+</script>
 
 <div class="block block-bordered" id="join">
   <div class="container">
