@@ -8,14 +8,24 @@
       <div class="modal-body">
         <h3 class="text-center">{{ include.headline }}</h3>
 
-        <form method="post" action="http://bot.nickvorobiov.com/order.php" data-toggle="validator">
-          <input type="hidden" name="trello-list-id" value="{{ include.trello-list-id }}" />
-          <input type="hidden" name="redirect" value="{{ include.redirect }}" />
-          <input type="hidden" name="traffic_source" />
-          <input type="hidden" name="roistat" />
+        <form method="post" action="https://nickvorobiov.activehosted.com/proc.php" data-toggle="validator">
+          <input type="hidden" name="u" value="{{ include.ac-form-id }}" />
+          <input type="hidden" name="f" value="{{ include.ac-form-id }}" />
+          <input type="hidden" name="s" />
+          <input type="hidden" name="c" value="0" />
+          <input type="hidden" name="m" value="0" />
+          <input type="hidden" name="act" value="sub" />
+          <input type="hidden" name="v" value="2" />
+
+          <input type="hidden" name="field[1]" data-field="roistat" value="" />
+          <input type="hidden" name="field[2]" data-field="traffic_source" value="" />
+          <input type="hidden" name="field[3]" data-field="trello-list-id" value="{{ include.trello-list-id }}" />
+          <input type="hidden" name="field[4]" data-field="referer" value="" />
+          <input type="hidden" name="field[7]" data-field="offer" value="{{ include.offer }}" />
+
           <div class="form-group">
-            <label for="input-name" class="control-label">Имя</label>
-            <input id="input-name" required="required" name="name" type="text" class="form-control" placeholder="Иван Иванов">
+            <label for="input-name" class="control-label">Имя Фамилия</label>
+            <input id="input-name" required="required" name="fullname" type="text" class="form-control" placeholder="Иван Иванов">
           </div>
           <div class="form-group">
             <label for="input-phone" class="control-label">Телефон</label>

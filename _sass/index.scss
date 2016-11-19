@@ -103,10 +103,19 @@ body {
   font-weight: 300;
 }
 
+.timer {
+  font-size: 60px;
+  font-weight: 300;
+}
+
 .pricing__table td {
   text-align: center;
 }
 
 .pricing {
   display: none;
+}
+
+.heart {
+  color: #c00;
 }
