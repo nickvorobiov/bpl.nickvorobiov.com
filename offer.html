@@ -26,26 +26,21 @@ layout: base
   </nav>
 
   <div class="container p-y-lg">
-    <h4><b>с 26 ноября по 24 декабря, онлайн</b></h4>
+    <h4><b>старт каждый понедельник, онлайн</b></h4>
 
     <h2>Бизнес <small><span class="icon icon-heart text-muted heart"></span></small> по&nbsp;любви</h2>
 
     <h1>Начни дело, которое будет приносить тебе деньги и&nbsp;удовольствие</h1>
 
     <p class="m-t-md">
-      <button type="button" data-toggle="modal" data-target="#modal-course-bonus" class="btn btn-primary btn-lg bonus">Я готов начать</button>
-      <button type="button" data-toggle="modal" data-target="#modal-course-nobonus" class="btn btn-primary btn-lg hidden nobonus">Я готов начать</button>
+      <button type="button" data-toggle="modal" data-target="#modal-course" class="btn btn-primary btn-lg hidden">Я готов начать</button>
     </p>
   </div>
 </div>
 
-{% include modalform.html id="modal-course-bonus" title="Регистрация на курс" headline="Весь курс сразу со скидкой 20% = 20&nbsp;000&nbsp;руб." offer="Бизнес по любви Весь курс сразу со скидкой 20% за 20000" trello-list-id="582dff7c3b8cc8c719d654f5" ac-form-id="29" buttontext="Отправить и перейти к оплате" %}
+{% include modalform.html id="modal-course" title="Регистрация на курс" headline="Весь курс сразу = 25&nbsp;000&nbsp;руб." offer="Бизнес по любви Весь курс сразу за 25000" trello-list-id="582dff7c3b8cc8c719d654f5" ac-form-id="23" buttontext="Отправить и перейти к оплате" %}
 
-{% include modalform.html id="modal-week-bonus" title="Регистрация на курс" headline="Первая неделя со скидкой 20% = 6&nbsp;400&nbsp;руб." offer="Бизнес по любви Первая неделя со скидкой 20% за 6400" trello-list-id="582dff7c3b8cc8c719d654f5" ac-form-id="31" buttontext="Отправить и перейти к оплате" %}
-
-{% include modalform.html id="modal-course-nobonus" title="Регистрация на курс" headline="Весь курс сразу = 25&nbsp;000&nbsp;руб." offer="Бизнес по любви Весь курс сразу за 25000" trello-list-id="582dff7c3b8cc8c719d654f5" ac-form-id="23" buttontext="Отправить и перейти к оплате" %}
-
-{% include modalform.html id="modal-week-nobonus" title="Регистрация на курс" headline="Первая неделя = 8&nbsp;000&nbsp;руб." offer="Бизнес по любви Первая неделя за 8000" trello-list-id="582dff7c3b8cc8c719d654f5" ac-form-id="27" buttontext="Отправить и перейти к оплате" %}
+{% include modalform.html id="modal-week" title="Регистрация на курс" headline="Первая неделя = 8&nbsp;000&nbsp;руб." offer="Бизнес по любви Первая неделя за 8000" trello-list-id="582dff7c3b8cc8c719d654f5" ac-form-id="27" buttontext="Отправить и перейти к оплате" %}
 
 <div class="block block-bordered">
   <div class="container">
@@ -104,12 +99,10 @@ layout: base
         </div>
 
         <p class="lead m-t-md">
-          <span class="bonus"><s>8000р</s> -20% <b>6400р</b></span>
-          <span class="hidden nobonus"><b>8000р</b></span>
+          <b>8000р</b>
         </p>
         <p class="lead">
-          <button type="button" data-toggle="modal" data-target="#modal-week-bonus" class="btn btn-primary btn-lg bonus">Зарегистрироваться на первую неделю со скидкой 20%</button>
-          <button type="button" data-toggle="modal" data-target="#modal-week-nobonus" class="btn btn-primary btn-lg hidden nobonus">Зарегистрироваться на первую неделю</button>
+          <button type="button" data-toggle="modal" data-target="#modal-week" class="btn btn-primary btn-lg">Зарегистрироваться на первую неделю</button>
         </p>
       </div>
 
@@ -168,12 +161,13 @@ layout: base
     <h1 class="text-center m-b-md">Зарегистрируйся на весь курс сразу</h1>
 
     <p class="lead text-center m-t-md">
-      <span class="bonus"><s>25000р</s> -20% <b>20000р</b></span>
-      <span class="hidden nobonus"><b>25000р</b></span>
+      8000 + 8000 + 8000 + 8000 = <s>36000 рублей</s>
     </p>
     <p class="lead text-center">
-      <button type="button" data-toggle="modal" data-target="#modal-course-bonus" class="btn btn-primary btn-lg bonus">Зарегистрироваться на весь курс со скидкой 20%</button>
-      <button type="button" data-toggle="modal" data-target="#modal-course-nobonus" class="btn btn-primary btn-lg hidden nobonus">Зарегистрироваться на весь курс</button>
+      <b>25000 рублей</b> при оплате курса целиком
+    </p>
+    <p class="lead text-center">
+      <button type="button" data-toggle="modal" data-target="#modal-course" class="btn btn-primary btn-lg">Зарегистрироваться на весь курс</button>
     </p>
   </div>
 </div>
@@ -185,75 +179,22 @@ layout: base
         <h1>Что входит в курс?</h1>
         <p>
           — Доступ к 19 видео-урокам;
-          <br/>— Доступ к 5 живым онлайн-урокам;
           <br/>— Доступ к 100% заданий;
+          <br/>— <b>Персональная обратная связь</b> тренера на каждое задание;
           <br/>— Доступ ко всей базе знаний с материалами;
           <br/>— Доступ к сообществу участников.
         </p>
 
-        <div class="bonus">
-          <h2 class="m-t-lg">И это ещё не всё!</h2>
+        <h2 class="m-t-lg">И это ещё не всё!</h2>
 
-          <p class="lead">Если запишешься на курс <b>сегодня</b> до полуночи по московскому времени, ты получишь скидку 20% и бонусы:</p>
-
-          <p>
-            1. Запись 50 уроков по прокачке личных качеств, которые необходимы предпринимателю;
-            <br/>2. Бесплатный доступ на полгода в закрытый клуб личностного роста.
-          </p>
-        </div>
+        <p>
+          1. Запись 50 уроков по прокачке личных качеств, которые необходимы предпринимателю;
+          <br/>2. Бесплатный доступ на полгода в закрытый клуб личностного роста.
+        </p>
       </div>
     </div>
   </div>
 </div>
-
-<div class="block block-bordered block-inverse bonus">
-  <div class="container text-center">
-    <h1>Внимание! Спецпредложение истекает через </h1>
-    
-    <p class="timer" id="saturday-timer">00:00:00</p>
-  </div>
-</div>
-
-<script type="text/javascript" src="/vendor/moment-with-locales.min.js"></script>
-<script type="text/javascript" src="/vendor/moment-timezone-with-data-2010-2020.min.js"></script>
-<script type="text/javascript">
-function hideBonuses() {
-  $('.bonus').fadeOut(300);
-  $('.nobonus').removeClass('hidden');
-}
-
-$(function() {
-  var currentTime = moment().tz('Europe/Moscow');
-
-  // в субботу работает таймер до полуночи по мск
-  if (currentTime.isoWeekday() == 6) {
-    var eventTime = moment().tz('Europe/Moscow').endOf('day');
-    var diffTime = eventTime.diff(currentTime);
-    var duration = moment.duration(diffTime);
-    var interval = 1000;
-
-    setInterval(function(){
-      duration = moment.duration(duration - interval, 'milliseconds');
-
-      if (duration < 0) {
-        hideBonuses();
-      }
-
-      var h = '0'+duration.hours();
-      var m = '0'+duration.minutes();
-      var s = '0'+duration.seconds();
-
-      h = h.substr(h.length-2);
-      m = m.substr(m.length-2);
-      s = s.substr(s.length-2);
-
-      $('#saturday-timer').text(h + ":" + m + ":" + s)
-    }, interval);
-  } else {
-    hideBonuses();
-  }
-})
-</script>
 
 <div class="block b-me" id="who">
   <div class="container">

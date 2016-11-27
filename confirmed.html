@@ -2,13 +2,25 @@
 layout: base
 ---
 
-<div class="block text-center">
+<div class="block">
   <div class="container">
-    <h1 class="text-center">Подписка подтверждена!</h1>
-    <p class="lead text-center">
-      За час до начала ты получишь ссылку для участия в вебинаре
-    </p>
-
-    <p>Начало в субботу в 20:00 мск. Отметь это время в календаре и будь, пожалуйста, вовремя</p>
+    <h1 class="m-b-lg">Подписка подтверждена!</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h2><b>1. Вступи в группу</b></h2>
+        <div id="vk_groups"></div>
+      </div>
+      <div class="col-md-5 col-md-offset-1">
+        <h2><b>2. Смотри открытый урок</h2>
+        <a class="btn btn-primary btn-lg" href="/live">Смотреть открытый урок</a>
+      </div>
+    </div>
   </div>
 </div>
+
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
+
+<!-- VK Widget -->
+<script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 1, width: "auto"}, 129164105);
+</script>
